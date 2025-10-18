@@ -1,0 +1,158 @@
+.header {
+  background-color: #131921;
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  gap: 20px;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  min-width: 100px;
+}
+
+.logo-text {
+  color: #ff9900;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 0px 15px;
+  height: 38px;
+  background-color: #ff9900;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #131921;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.user-menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 14px;
+}
+
+.logout-btn {
+  background-color: #ff9900;
+  color: #131921;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: all 0.3s;
+  position: relative;
+  bottom: 9px;
+}
+
+.auth-link:hover {
+  background-color: white;
+  color: #131921;
+}
+
+.cart-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.cart-link:hover {
+  background-color: white;
+  color: #131921;
+}
+
+.cart-count {
+  background-color: #ff9900;
+  color: #131921;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  background-color: #232f3e;
+  overflow-x: auto;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 5px 10px;
+  transition: all 0.3s;
+}
+
+.header-nav a:hover {
+  color: #ff9900;
+}
+
+@media (max-width: 768px) {
+  .header-top {
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .header-nav {
+    gap: 10px;
+  }
+}
