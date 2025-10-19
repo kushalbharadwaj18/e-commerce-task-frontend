@@ -12,8 +12,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  gap: 20px;
+  padding: 12px 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -22,52 +23,69 @@
   font-size: 24px;
   font-weight: bold;
   min-width: 100px;
+  flex-shrink: 0;
 }
 
 .logo-text {
   color: #ff9900;
 }
 
+/* Improved search bar alignment and styling */
 .search-bar {
   flex: 1;
   display: flex;
+  min-width: 250px;
   max-width: 600px;
-  margin-top: 10px;
+  height: 40px;
 }
 
 .search-bar input {
   flex: 1;
-  padding: 10px;
+  padding: 20px 15px;
   border: none;
   border-radius: 4px 0 0 4px;
   font-size: 14px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  outline: 2px solid #ff9900;
 }
 
 .search-bar button {
-  padding: 0px 15px;
-  height: 38px;
+  padding: 0 20px;
   background-color: #ff9900;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   font-weight: bold;
   color: #131921;
+  transition: background-color 0.3s;
 }
 
+.search-bar button:hover {
+  background-color: #e68a00;
+}
+
+/* Improved header actions alignment and spacing */
 .header-actions {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .user-menu {
   display: flex;
   gap: 10px;
   align-items: center;
+  white-space: nowrap;
 }
 
 .user-name {
-  font-size: 14px;
+  font-size: 13px;
+  color: #ccc;
 }
 
 .logout-btn {
@@ -78,17 +96,25 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background-color: #e68a00;
 }
 
 .auth-link {
   color: white;
   text-decoration: none;
   padding: 8px 16px;
+  position: relative;
+  bottom: 10px;
   border: 1px solid white;
   border-radius: 4px;
   transition: all 0.3s;
-  position: relative;
-  bottom: 9px;
+  white-space: nowrap;
+  font-size: 13px;
 }
 
 .auth-link:hover {
@@ -106,6 +132,8 @@
   border: 1px solid white;
   border-radius: 4px;
   transition: all 0.3s;
+  white-space: nowrap;
+  font-size: 13px;
 }
 
 .cart-link:hover {
@@ -120,10 +148,31 @@
   border-radius: 50%;
   font-weight: bold;
   font-size: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.admin-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #ff9900;
+  border-radius: 4px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  font-size: 13px;
+  background-color: transparent;
+}
+
+.admin-link:hover {
+  background-color: #ff9900;
+  color: #131921;
 }
 
 .header-nav {
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 20px;
   padding: 10px 20px;
   background-color: #232f3e;
@@ -136,23 +185,53 @@
   white-space: nowrap;
   padding: 5px 10px;
   transition: all 0.3s;
+  font-size: 13px;
 }
 
 .header-nav a:hover {
   color: #ff9900;
 }
 
+@media (max-width: 1024px) {
+  .header-top {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .search-bar {
+    min-width: 200px;
+    max-width: 400px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .header-top {
     flex-wrap: wrap;
+    padding: 8px 10px;
   }
 
   .search-bar {
     order: 3;
     flex-basis: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
   }
 
   .header-nav {
     gap: 10px;
+    font-size: 12px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .user-name {
+    display: none;
   }
 }

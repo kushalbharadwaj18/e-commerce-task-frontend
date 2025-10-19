@@ -77,11 +77,15 @@
 .item-details h3 {
   color: #131921;
   margin-bottom: 5px;
+  position: relative;
+  left: 25px;
 }
 
 .item-details .price {
   color: #ff9900;
   font-weight: bold;
+  position: relative;
+  left: 25px;
 }
 
 .quantity-control {
@@ -105,9 +109,9 @@
   text-align: center;
   border: 1px solid #ddd;
   padding: 5px;
-  border-radius: 4px;
   position: relative;
-  top: 8px;
+  top: 7px;
+  border-radius: 4px;
 }
 
 .item-total {

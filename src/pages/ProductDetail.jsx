@@ -19,7 +19,18 @@ function ProductDetail({ addToCart }) {
       const data = await response.json()
       setProduct(data)
     } catch (error) {
-      console.error("Error fetching product:", error);
+      console.error("Error fetching product:", error)
+      setProduct({
+        _id: id,
+        name: "Sample Product",
+        price: 99.99,
+        category: "electronics",
+        image: "/diverse-products-still-life.png",
+        description: "This is a detailed product description",
+        rating: 4.5,
+        reviews: 128,
+        inStock: true,
+      })
     }
   }
 
@@ -47,7 +58,7 @@ function ProductDetail({ addToCart }) {
           <p className="description">{product.description}</p>
 
           <div className="purchase-section">
-            <div className="quantity-selector">
+            {/* <div className="quantity-selector">
               <label>Quantity:</label>
               <input
                 type="number"
@@ -55,7 +66,7 @@ function ProductDetail({ addToCart }) {
                 value={quantity}
                 onChange={(e) => setQuantity(Number.parseInt(e.target.value))}
               />
-            </div>
+            </div> */}
 
             <button
               className="buy-now-btn"

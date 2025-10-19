@@ -7,11 +7,13 @@ import "./Products.css"
 function Products({ addToCart }) {
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
+  const [categories, setCategories] = useState([])
   const [searchParams] = useSearchParams()
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("")
   const [priceRange, setPriceRange] = useState([0, 1000])
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const category = searchParams.get("category")
@@ -23,6 +25,7 @@ function Products({ addToCart }) {
       setSelectedCategory("")
     }
     fetchProducts()
+    fetchCategories()
   }, [searchParams])
 
   const fetchProducts = async () => {
@@ -33,6 +36,18 @@ function Products({ addToCart }) {
       setFilteredProducts(data)
     } catch (error) {
       console.error("Error fetching products:", error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/categories")
+      const data = await response.json()
+      setCategories(data)
+    } catch (error) {
+      console.error("Error fetching categories:", error)
     }
   }
 
@@ -76,10 +91,11 @@ function Products({ addToCart }) {
             <label>Category</label>
             <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
               <option value="">All Categories</option>
-              <option value="electronics">Electronics</option>
-              <option value="books">Books</option>
-              <option value="clothing">Clothing</option>
-              <option value="home">Home & Kitchen</option>
+              {categories.map((category) => (
+                <option key={category._id} value={category.name}>
+                  {category.name}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -99,27 +115,35 @@ function Products({ addToCart }) {
 
         <main className="products-main">
           <h2>Products ({filteredProducts.length})</h2>
-          <div className={`products-grid ${isTransitioning ? "transitioning" : ""}`}>
-            {filteredProducts.map((product) => (
-              <Link key={product._id} to={`/product/${product._id}`} className="product-card-link">
-                <div className="product-card">
-                  <img src={product.image || "/placeholder.svg"} alt={product.name} />
-                  <h3>{product.name}</h3>
-                  <p className="description">{product.description}</p>
-                  <p className="price">${product.price.toFixed(2)}</p>
-                  <button
-                    className="add-to-cart-btn"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      addToCart(product)
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {loading ? (
+            <div className="loading-message">Loading products...</div>
+          ) : (
+            <div className={`products-grid ${isTransitioning ? "transitioning" : ""}`}>
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                  <Link key={product._id} to={`/product/${product._id}`} className="product-card-link">
+                    <div className="product-card">
+                      <img src={product.image || "/placeholder.svg"} alt={product.name} />
+                      <h3>{product.name}</h3>
+                      <p className="description">{product.description}</p>
+                      <p className="price">${product.price.toFixed(2)}</p>
+                      <button
+                        className="add-to-cart-btn"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          addToCart(product)
+                        }}
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  </Link>
+                ))
+              ) : (
+                <div className="no-products">No products found</div>
+              )}
+            </div>
+          )}
         </main>
       </div>
     </div>
