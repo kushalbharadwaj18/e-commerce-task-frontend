@@ -7,14 +7,14 @@ import "./Home.css"
 function Home() {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     fetchCategories()
   }, [])
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories")
+      const response = await fetch(`${baseUrl}/api/categories`)
       const data = await response.json()
       setCategories(data)
     } catch (error) {
