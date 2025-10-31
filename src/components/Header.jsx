@@ -8,14 +8,14 @@ function Header({ user, onLogout, cartCount }) {
   const [showMenu, setShowMenu] = useState(false);
   const [categories, setCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     fetchCategories();
   }, []);
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories");
+      const response = await fetch(`${baseUrl}/api/categories`);
       const data = await response.json();
       setCategories(data);
     } catch (error) {
@@ -66,9 +66,9 @@ function Header({ user, onLogout, cartCount }) {
           <Link to="/cart" className="cart-link">
             Cart <span className="cart-count">{cartCount}</span>
           </Link>
-          <Link to="/admin/login" className="admin-link">
+          {/* <Link to="/admin/login" className="admin-link">
             Admin
-          </Link>
+          </Link> */}
         </div>
       </div>
 
@@ -81,10 +81,12 @@ function Header({ user, onLogout, cartCount }) {
         ))} 
       </nav>
          */}
-      <nav className="header-nav">
-        {user && <Link to="/orders">Orders</Link>}
-        {user && <Link to="/payment-history">Payment History</Link>}
-      </nav>
+      {user && (
+        <nav className="header-nav">
+          {user && <Link to="/orders">Orders</Link>}
+          {user && <Link to="/payment-history">Payment History</Link>}
+        </nav>
+      )}
     </header>
   );
 }

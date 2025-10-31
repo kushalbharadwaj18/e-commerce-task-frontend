@@ -14,14 +14,14 @@ function AdminCategories() {
 	path: "",
     image: "",
   })
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     fetchCategories()
   }, [])
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories")
+      const response = await fetch(`${baseUrl}/api/categories`)
       const data = await response.json()
       setCategories(data)
     } catch (error) {
@@ -51,8 +51,8 @@ function AdminCategories() {
 
     try {
       const url = editingId
-        ? `http://localhost:5000/api/categories/${editingId}`
-        : "http://localhost:5000/api/categories"
+        ? `${baseUrl}/api/categories/${editingId}`
+        : `${baseUrl}/api/categories`
 
       const method = editingId ? "PUT" : "POST"
 
@@ -84,7 +84,7 @@ function AdminCategories() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
-        await fetch(`http://localhost:5000/api/categories/${id}`, { method: "DELETE" })
+        await fetch(`${baseUrl}/api/categories/${id}`, { method: "DELETE" })
         fetchCategories()
       } catch (error) {
         console.error("Error deleting category:", error)

@@ -5,13 +5,13 @@ import './CategoryDetail.css';
 const CategoryDetail = ({ addToCart }) => {
   const { category } = useParams(); // ✅ Get category from URL
   const [products, setProducts] = useState([]);
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchProducts = async () => {
       if (!category) return; // ✅ Prevent empty request
 
       try {
-        const response = await fetch(`http://localhost:5000/api/categories/${category}`);
+        const response = await fetch(`${baseUrl}/api/categories/${category}`);
         const data = await response.json();
         setProducts(data);
         console.log(data); // ✅ Correct logging

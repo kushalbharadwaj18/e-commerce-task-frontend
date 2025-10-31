@@ -14,7 +14,7 @@ function Products({ addToCart }) {
   const [priceRange, setPriceRange] = useState([0, 1000])
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [loading, setLoading] = useState(true)
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     const category = searchParams.get("category")
     if (category) {
@@ -30,7 +30,7 @@ function Products({ addToCart }) {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products")
+      const response = await fetch(`${baseUrl}/api/products`)
       const data = await response.json()
       setProducts(data)
       setFilteredProducts(data)
@@ -43,7 +43,7 @@ function Products({ addToCart }) {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories")
+      const response = await fetch(`${baseUrl}/api/categories`)
       const data = await response.json()
       setCategories(data)
     } catch (error) {

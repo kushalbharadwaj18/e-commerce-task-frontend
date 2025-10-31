@@ -5,7 +5,7 @@ import "./Orders.css"
 
 function Orders({ user }) {
   const [orders, setOrders] = useState([])
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     if (user) fetchOrders()
   }, [user])
@@ -13,7 +13,7 @@ function Orders({ user }) {
   const fetchOrders = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:5000/api/orders", {
+      const response = await fetch(`${baseUrl}/api/orders`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       const data = await response.json()

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { data, useNavigate } from "react-router-dom"
 import "./Checkout.css"
 
 function Checkout({ user, cart }) {
@@ -18,8 +18,9 @@ function Checkout({ user, cart }) {
     cvv: "",
   })
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
   const navigate = useNavigate()
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -32,7 +33,7 @@ function Checkout({ user, cart }) {
     setLoading(true)
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:5000/api/checkout", {
+      const response = await fetch(`${baseUrl}/api/checkout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +42,7 @@ function Checkout({ user, cart }) {
         body: JSON.stringify({
           ...formData,
           items: cart,
-          total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+          sum: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
         }),
       })
       const data = await response.json()
@@ -49,6 +50,7 @@ function Checkout({ user, cart }) {
         localStorage.removeItem("cart")
         navigate("/orders")
       }
+      setError(data.message);
     } catch (error) {
       console.error("Error processing checkout:", error)
     } finally {
@@ -73,6 +75,7 @@ function Checkout({ user, cart }) {
       <div className="checkout-container">
         <div className="checkout-form">
           <h2>Checkout</h2>
+           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleSubmit}>
             <fieldset>
               <legend>Shipping Address</legend>

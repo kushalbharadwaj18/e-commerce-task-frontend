@@ -23,9 +23,10 @@ function AdminProducts() {
     fetchCategories()
   }, [])
 
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products")
+      const response = await fetch(`${baseUrl}/api/products`)
       const data = await response.json()
       setProducts(data)
     } catch (error) {
@@ -35,7 +36,7 @@ function AdminProducts() {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories")
+      const response = await fetch(`${baseUrl}/api/categories`)
       const data = await response.json()
       setCategories(data)
     } catch (error) {
@@ -64,7 +65,7 @@ function AdminProducts() {
     setLoading(true)
 
     try {
-      const url = editingId ? `http://localhost:5000/api/products/${editingId}` : "http://localhost:5000/api/products"
+      const url = editingId ? `${baseUrl}/api/products/${editingId}` : `${baseUrl}/api/products`
 
       const method = editingId ? "PUT" : "POST"
 
@@ -103,7 +104,7 @@ function AdminProducts() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await fetch(`http://localhost:5000/api/products/${id}`, { method: "DELETE" })
+        await fetch(`${baseUrl}/api/products/${id}`, { method: "DELETE" })
         fetchProducts()
       } catch (error) {
         console.error("Error deleting product:", error)

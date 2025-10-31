@@ -8,14 +8,14 @@ function ProductDetail({ addToCart }) {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     fetchProduct()
   }, [id])
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${id}`)
+      const response = await fetch(`${baseUrl}/api/products/${id}`)
       const data = await response.json()
       setProduct(data)
     } catch (error) {

@@ -5,7 +5,7 @@ import "./PaymentHistory.css"
 
 function PaymentHistory({ user }) {
   const [payments, setPayments] = useState([])
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     if (user) fetchPayments()
   }, [user])
@@ -13,7 +13,7 @@ function PaymentHistory({ user }) {
   const fetchPayments = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://localhost:5000/api/payments", {
+      const response = await fetch(`${baseUrl}/api/payments`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       const data = await response.json()

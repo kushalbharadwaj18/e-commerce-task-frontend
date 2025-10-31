@@ -6,14 +6,14 @@ import "./AdminOrders.css"
 function AdminOrders() {
   const [orders, setOrders] = useState([])
   const [loading, setLoading] = useState(true)
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   useEffect(() => {
     fetchOrders()
   }, [])
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/orders")
+      const response = await fetch(`${baseUrl}/api/orders`)
       const data = await response.json()
       setOrders(data)
     } catch (error) {

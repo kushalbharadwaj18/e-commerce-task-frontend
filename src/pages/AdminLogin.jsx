@@ -10,14 +10,14 @@ function AdminLogin({ setAdminToken }) {
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   const handleLogin = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError("")
 
     try {
-      const response = await fetch("http://localhost:5000/api/admin/login", {
+      const response = await fetch(`${baseUrl}/api/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -50,7 +50,7 @@ function AdminLogin({ setAdminToken }) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@amazon.com"
+              placeholder="Enter email"
               required
             />
           </div>

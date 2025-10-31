@@ -11,7 +11,7 @@ function Signup({ setUser }) {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
   const navigate = useNavigate()
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
@@ -19,7 +19,7 @@ function Signup({ setUser }) {
       return
     }
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
+      const response = await fetch(`${baseUrl}/api/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
