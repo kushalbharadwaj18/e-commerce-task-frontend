@@ -16,6 +16,7 @@ function AdminProducts() {
     category: "",
     image: "",
     stock: "",
+    instVideo: ""
   })
 
   useEffect(() => {
@@ -84,6 +85,7 @@ function AdminProducts() {
           category: "",
           image: "",
           stock: "",
+          instaVideo: ""
         })
         setShowForm(false)
         setEditingId(null)
@@ -157,12 +159,18 @@ function AdminProducts() {
               <label>Stock</label>
               <input type="number" name="stock" value={formData.stock} onChange={handleInputChange} required />
             </div>
+
+             <div className="form-group">
+              <label>Insta Video Link</label>
+              <input type="text" name="instaVideo" value={formData.instaVideo} onChange={handleInputChange} required />
+            </div>
           </div>
 
           <div className="form-group">
             <label>Description</label>
             <textarea name="description" value={formData.description} onChange={handleInputChange} rows="4" required />
           </div>
+           
 
           <div className="form-group">
             <label>Product Image</label>

@@ -41,6 +41,7 @@ function ProductDetail({ addToCart }) {
       <div className="product-detail-container">
         <div className="product-image">
           <img src={product.image || "/placeholder.svg"} alt={product.name} />
+          <p>Video Link: <a href={product.instaVideo ? product.instaVideo : "https://www.instagram.com/sujanreddygali/?hl=en"} className="insta-video">{product.instaVideo ? product.instaVideo : "https://www.instagram.com/sujanreddygali/?hl=en"}</a></p>
         </div>
 
         <div className="product-info">
@@ -52,7 +53,7 @@ function ProductDetail({ addToCart }) {
 
           <div className="price-section">
             <span className="price">${product.price.toFixed(2)}</span>
-            <span className="stock">{product.inStock ? "In Stock" : "Out of Stock"}</span>
+            <span className="stock">{product.stock > 0  ? "In Stock" : "Out of Stock"}</span>
           </div>
 
           <p className="description">{product.description}</p>
@@ -84,7 +85,7 @@ function ProductDetail({ addToCart }) {
             <h3>Product Details</h3>
             <ul>
               <li>Category: {product.category}</li>
-              <li>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</li>
+              <li>Availability: {product.stock > 0 ? "In Stock" : "Out of Stock"}</li>
               <li>Free Shipping on orders over $50</li>
               <li>30-day return policy</li>
             </ul>

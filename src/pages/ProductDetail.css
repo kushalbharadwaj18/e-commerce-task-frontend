@@ -16,11 +16,15 @@
 }
 
 .product-image {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
 }
 
+.insta-video {
+  color: blue;
+  text-decoration: underline;
+}
 .product-image img {
   max-width: 100%;
   height: auto;

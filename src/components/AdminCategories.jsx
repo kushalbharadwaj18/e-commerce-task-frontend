@@ -112,7 +112,7 @@ function AdminCategories() {
             <label>Description</label>
             <textarea name="description" value={formData.description} onChange={handleInputChange} rows="3" />
           </div>
-		
+		     
 		  <div className="form-group">
             <label>Path</label>
             <input type="text" name="path" value={formData.path} onChange={handleInputChange} required />

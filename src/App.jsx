@@ -17,6 +17,10 @@ import AdminLogin from "./pages/AdminLogin"
 import AdminDashboard from "./pages/AdminDashboard"
 import CategoryDetail from "./pages/CategoryDetail"
 import "./App.css"
+import ContactUs from "./pages/ContactUs"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
+import TermsAndConditions from "./pages/TermsAndConditions"
+import RefundPolicy from "./pages/RefundPolicy"
 
 // Protected route wrapper for users
 const ProtectedRoute = ({ user, children }) => {
@@ -175,6 +179,22 @@ function App() {
                     <Route
                       path="/signup"
                       element={<Signup setUser={setUser} />}
+                    />
+                    <Route
+                      path="/contactus"
+                      element={<ContactUs />}
+                    />
+                    <Route
+                      path="/privacy-policy"
+                      element={<PrivacyPolicy />}
+                    />
+                    <Route
+                      path="/terms-and-conditions"
+                      element={<TermsAndConditions />}
+                    />
+                    <Route
+                      path="/refund-and-cancellation"
+                      element={<RefundPolicy />}
                     />
                     {/* Catch-all: redirect unknown routes */}
                     <Route path="*" element={<Navigate to="/" replace />} />

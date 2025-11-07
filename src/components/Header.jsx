@@ -37,7 +37,7 @@ function Header({ user, onLogout, cartCount }) {
     <header className="header">
       <div className="header-top">
         <Link to="/" className="logo">
-          <span className="logo-text">Amazon</span>
+          <span className="logo-text">ExpressBuy</span>
         </Link>
 
         <form className="search-bar" onSubmit={handleSearch}>

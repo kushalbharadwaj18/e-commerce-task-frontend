@@ -1,5 +1,5 @@
 import "./Footer.css"
-
+import { Link } from "react-router-dom"
 function Footer() {
   return (
     <footer className="footer">
@@ -8,7 +8,7 @@ function Footer() {
           <h4>Get to Know Us</h4>
           <ul>
             <li>
-              <a href="#about">About Amazon</a>
+              <a href="#about">About ExpressBuy</a>
             </li>
             <li>
               <a href="#careers">Careers</a>
@@ -35,38 +35,26 @@ function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4>Make Money with Us</h4>
+          <h4>Quick Link</h4>
           <ul>
             <li>
-              <a href="#sell">Sell on Amazon</a>
+              <Link to="/contactus">Contact Us</Link>
             </li>
             <li>
-              <a href="#advertise">Advertise Your Products</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
             <li>
-              <a href="#become-affiliate">Become an Affiliate</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>Help & Settings</h4>
-          <ul>
-            <li>
-              <a href="#help">Help Center</a>
+              <Link to="/terms-and-conditions">Terms & Conditions</Link>
             </li>
             <li>
-              <a href="#account">Your Account</a>
-            </li>
-            <li>
-              <a href="#returns">Returns & Replacements</a>
+              <Link to="/refund-and-cancellation">Refund & Cancellation</Link>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2025 Amazon Clone. All rights reserved.</p>
+        <p>&copy; 2025 ExpressBuy. All rights reserved.</p>
       </div>
     </footer>
   )

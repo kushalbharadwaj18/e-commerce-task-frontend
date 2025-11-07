@@ -50,7 +50,7 @@ function Cart({ cart, setCart }) {
               </div>
               <div className="quantity-control">
                 <button onClick={() => updateQuantity(item._id, item.quantity - 1)}>-</button>
-                <input type="number" value={item.quantity} readOnly />
+                <input type="number" value={item.quantity} className="input-quantity" readOnly />
                 <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>+</button>
               </div>
               <div className="item-total">${(item.price * item.quantity).toFixed(2)}</div>

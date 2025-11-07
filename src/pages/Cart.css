@@ -180,6 +180,14 @@
   background-color: #e68a00;
 }
 
+.input-quantity {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
+  width: 100px;
+}
+
 .continue-shopping-link {
   display: block;
   text-align: center;

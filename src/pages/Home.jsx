@@ -32,7 +32,7 @@ function Home() {
           alt="Hero Banner"
         />
         <div className="hero-content">
-          <h1>Welcome to Amazon</h1>
+          <h1>Welcome to ExpressBuy</h1>
           <p>Discover millions of products at great prices</p>
           <Link to="/products" className="cta-button">
             Shop Now
