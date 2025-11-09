@@ -11,8 +11,8 @@ const TermsAndConditions = () => {
         <h2>1. Agreement to Terms</h2>
         <p>
           Welcome to <strong>ExpressBuy</strong>. By accessing our website at{" "}
-          <a href="https://www.ExpressBuy.in" target="_blank" rel="noreferrer">
-            www.ExpressBuy.in
+          <a href="https://expressbuy.page/" target="_blank" rel="noreferrer">
+            expressbuy.page
           </a>{" "}
           and using our online services, you agree to be bound by these Terms and Conditions.
           These terms govern your use of our platform and all related products, features,
@@ -193,10 +193,10 @@ const TermsAndConditions = () => {
           <strong>ExpressBuy</strong><br />
           Online Services & Digital Platform<br />
           Email:{" "}
-          <a href="mailto:support@ExpressBuy.in">support@ExpressBuy.in</a><br />
+          <a href="mailto:support@expressbuy.in">support@ExpressBuy.in</a><br />
           Website:{" "}
-          <a href="https://www.ExpressBuy.in" target="_blank" rel="noreferrer">
-            www.ExpressBuy.in
+          <a href="https://expressbuy.page/" target="_blank" rel="noreferrer">
+            expressbuy.page
           </a>
         </p>
       </section>

@@ -15,7 +15,7 @@ const RefundPolicy = () => {
           across all our product categories — from electronics and accessories
           to digital products and exclusive deals. This Refund & Cancellation
           Policy outlines your rights and our procedures for handling returns,
-          refunds, and cancellations made through <a href="https://www.ExpressBuy.in">www.ExpressBuy.in</a>.
+          refunds, and cancellations made through <a href="https://expressbuy.page/">expressbuy.page</a>.
         </p>
       </section>
 
@@ -63,7 +63,7 @@ const RefundPolicy = () => {
           You can cancel your order for physical products any time before it has
           been shipped. Once dispatched, cancellation will not be possible. To
           cancel, contact our support team at{" "}
-          <a href="mailto:support@ExpressBuy.in">support@ExpressBuy.in</a> with
+          <a href="mailto:support@expressby.in">support@ExpressBuy.in</a> with
           your order ID.
         </p>
 
@@ -114,9 +114,9 @@ const RefundPolicy = () => {
         <p>
           <strong>ExpressBuy – Support Team</strong>
           <br />
-          Email: <a href="mailto:support@ExpressBuy.in">support@ExpressBuy.in</a>
+          Email: <a href="mailto:support@expressbuy.in">support@ExpressBuy.in</a>
           <br />
-          Website: <a href="https://www.ExpressBuy.in">www.ExpressBuy.in</a>
+          Website: <a href="https://www.expressbuy.in">www.ExpressBuy.in</a>
         </p>
       </section>
 

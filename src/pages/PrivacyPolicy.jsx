@@ -16,11 +16,11 @@ const PrivacyPolicy = () => {
           collect, use, disclose, and safeguard your information when you visit
           our website{" "}
           <a
-            href="https://www.ExpressBuy.in"
+            href="https://expressbuy.page/"
             target="_blank"
             rel="noreferrer"
           >
-            www.ExpressBuy.in
+            expressbuy.page
           </a>{" "}
           and use our online services or products.
         </p>
@@ -147,14 +147,14 @@ const PrivacyPolicy = () => {
           <strong>ExpressBuy</strong><br />
           Online Services & Digital Platform<br />
           Email:{" "}
-          <a href="mailto:support@ExpressBuy.in">support@ExpressBuy.in</a><br />
+          <a href="mailto:support@ExpressBuy.in">support@expressbuy.in</a><br />
           Website:{" "}
           <a
-            href="https://www.ExpressBuy.in"
+            href="https://expressbuy.page/"
             target="_blank"
             rel="noreferrer"
           >
-            www.ExpressBuy.in
+            expressbuy.page
           </a>
         </p>
       </section>
