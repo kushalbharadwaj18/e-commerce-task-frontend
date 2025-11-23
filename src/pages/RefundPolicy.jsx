@@ -5,17 +5,17 @@ const RefundPolicy = () => {
   return (
     <div className="refund-container">
       <h1>Refund & Cancellation Policy</h1>
-      <p className="last-updated">Last Updated: January 2025</p>
+      <p className="last-updated">Last Updated: November 2025</p>
 
       <section>
         <h2>1. Overview</h2>
         <p>
-          At <strong>ExpressBuy</strong>, customer satisfaction is our top priority.
-          We strive to provide a seamless and transparent shopping experience
-          across all our product categories — from electronics and accessories
-          to digital products and exclusive deals. This Refund & Cancellation
-          Policy outlines your rights and our procedures for handling returns,
-          refunds, and cancellations made through <a href="https://expressbuy.page/">expressbuy.page</a>.
+          At <strong>ExpressBuy</strong>, we prioritize customer satisfaction and
+          transparency. This Refund & Cancellation Policy explains how refunds,
+          returns, and cancellations are handled for orders placed through{" "}
+          <a href="https://expressbuy.page/">expressbuy.page</a>. This policy
+          applies only to <strong>physical products</strong> sold on our
+          platform.
         </p>
       </section>
 
@@ -23,73 +23,73 @@ const RefundPolicy = () => {
         <h2>2. Eligibility for Refunds & Returns</h2>
 
         <h3>2.1 Physical Products</h3>
-        <p>
-          You may request a refund or replacement for any physical product under
-          the following conditions:
-        </p>
+        <p>Customers may request a return, replacement, or refund if:</p>
         <ul>
           <li>The product was damaged or defective upon delivery.</li>
           <li>You received the wrong item.</li>
-          <li>Missing components or accessories as listed in the description.</li>
-          <li>The product does not match the website description or images.</li>
+          <li>Important components or accessories are missing.</li>
+          <li>
+            The product does not match the description displayed on the website.
+          </li>
         </ul>
         <p>
-          <strong>Return Window:</strong> Refund or replacement requests must be
+          <strong>Return Window:</strong> Return/refund requests must be
           submitted within <strong>7 days</strong> from the date of delivery.
         </p>
 
+        <p>To qualify for return approval:</p>
+        <ul>
+          <li>The product must be unused and in its original packaging.</li>
+          <li>All accessories, manuals, and tags must be returned.</li>
+          <li>Proof of purchase (Order ID or invoice) must be provided.</li>
+        </ul>
+
         <h3>2.2 Digital Products</h3>
         <p>
-          Due to the instant delivery nature of digital goods (e.g., e-books,
-          software keys, digital downloads), refunds are <strong>not applicable</strong> once
-          the product has been delivered or downloaded.
+          <strong>No digital products are sold on ExpressBuy.</strong> All
+          purchases made on the website are for physical products only.
         </p>
-        <p>Refunds may only be issued if:</p>
-        <ul>
-          <li>The digital file is corrupted or inaccessible.</li>
-          <li>You were charged multiple times for the same order.</li>
-          <li>
-            The download link or access key is invalid or non-functional and
-            remains unresolved after support contact.
-          </li>
-        </ul>
       </section>
 
       <section>
         <h2>3. Order Cancellation Policy</h2>
 
-        <h3>3.1 Before Dispatch</h3>
+        <h3>3.1 Before Shipment</h3>
         <p>
-          You can cancel your order for physical products any time before it has
-          been shipped. Once dispatched, cancellation will not be possible. To
-          cancel, contact our support team at{" "}
-          <a href="mailto:support@expressby.in">support@ExpressBuy.in</a> with
-          your order ID.
+          You may cancel your order at any time before it has been dispatched.
+          To request cancellation, please contact us at{" "}
+          <a href="mailto:support@expressbuy.in">support@expressbuy.in</a> with
+          your Order ID.
         </p>
 
-        <h3>3.2 After Dispatch</h3>
+        <h3>3.2 After Shipment</h3>
         <p>
-          If your order has been dispatched, you can refuse delivery. Once the
-          shipment returns to our warehouse, your refund will be processed (after
-          deducting applicable shipping charges).
-        </p>
-
-        <h3>3.3 Digital Products</h3>
-        <p>
-          Digital orders (software, e-books, codes) cannot be canceled once the
-          access key or download link has been sent.
+          Once shipped, orders cannot be canceled. However, you may refuse the
+          delivery. After the product is returned to our warehouse and inspected,
+          your refund will be processed. Shipping charges may be deducted where
+          applicable.
         </p>
       </section>
 
       <section>
         <h2>4. Refund Process</h2>
-        <p>Once your refund request is approved, the process includes:</p>
+        <p>
+          Once your return request is approved, the following steps will take
+          place:
+        </p>
         <ol>
-          <li>Product inspection for condition and validity of claim.</li>
-          <li>Email confirmation of refund approval.</li>
-          <li>Refund initiation to the original payment method.</li>
+          <li>The product will undergo a quality inspection.</li>
+          <li>
+            You will receive an email notification confirming approval or
+            rejection.
+          </li>
+          <li>Refund will be issued to the original payment method.</li>
         </ol>
-        <p><strong>Refund Timelines:</strong></p>
+
+        <p>
+          <strong>Refund Timelines (as per payment gateway and bank
+          policies):</strong>
+        </p>
         <ul>
           <li>UPI / Wallets: 3–5 business days</li>
           <li>Net Banking: 5–7 business days</li>
@@ -98,25 +98,40 @@ const RefundPolicy = () => {
       </section>
 
       <section>
-        <h2>5. Non-Refundable Items</h2>
+        <h2>5. Non-Returnable / Non-Refundable Items</h2>
         <ul>
-          <li>Gift cards and promotional coupons</li>
-          <li>Downloaded digital products</li>
-          <li>Items marked as “Final Sale” or “Non-Returnable”</li>
+          <li>Items marked as “Non-Returnable”.</li>
+          <li>
+            Products damaged due to misuse or handling after delivery.
+          </li>
+          <li>
+            Products returned without complete packaging or missing accessories.
+          </li>
+          <li>Gift cards or promotional free items (if any).</li>
         </ul>
       </section>
 
       <section>
-        <h2>6. Contact Us</h2>
+        <h2>6. Shipping Costs for Returns</h2>
         <p>
-          For refund or cancellation requests, please contact our support team:
+          If the return is due to an error from ExpressBuy (wrong item,
+          defective or damaged product), return shipping is free.
         </p>
+        <p>
+          For customer-initiated returns, return shipping charges may apply.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Contact Us</h2>
+        <p>For refund or cancellation requests, contact:</p>
         <p>
           <strong>ExpressBuy – Support Team</strong>
           <br />
-          Email: <a href="mailto:support@expressbuy.in">support@ExpressBuy.in</a>
+          Email:{" "}
+          <a href="mailto:support@expressbuy.in">support@expressbuy.in</a>
           <br />
-          Website: <a href="https://www.expressbuy.in">www.ExpressBuy.in</a>
+          Website: <a href="https://expressbuy.page">expressbuy.page</a>
         </p>
       </section>
 

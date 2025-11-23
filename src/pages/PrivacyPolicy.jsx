@@ -5,16 +5,14 @@ const PrivacyPolicy = () => {
   return (
     <div className="policy-container">
       <h1>Privacy Policy</h1>
-      <p><strong>Last Updated:</strong> November 7, 2025</p>
+      <p><strong>Last Updated:</strong> November 2025</p>
 
       <section>
         <h2>1. Introduction</h2>
         <p>
-          Welcome to <strong>ExpressBuy</strong> (“we,” “our,” or “us”). We
-          value your trust and are committed to protecting your personal
-          information and your privacy. This Privacy Policy explains how we
-          collect, use, disclose, and safeguard your information when you visit
-          our website{" "}
+          Welcome to <strong>ExpressBuy</strong> (“we,” “our,” or “us”). We are committed to safeguarding 
+          your personal information. This Privacy Policy describes how we collect, use, store, and protect 
+          your data when you visit our website{" "}
           <a
             href="https://expressbuy.page/"
             target="_blank"
@@ -22,122 +20,130 @@ const PrivacyPolicy = () => {
           >
             expressbuy.page
           </a>{" "}
-          and use our online services or products.
+          and purchase our physical products or use our online features.
         </p>
       </section>
 
       <section>
         <h2>2. Information We Collect</h2>
+
         <h3>2.1 Personal Information</h3>
-        <p>We may collect the following personal information when you register or interact with our services:</p>
+        <p>We collect personal information to process orders and improve customer experience, including:</p>
         <ul>
           <li>Full name and email address</li>
           <li>Phone number and contact preferences</li>
-          <li>Account credentials (username and encrypted password)</li>
-          <li>Billing details processed through our payment gateway</li>
-          <li>Order or service history and transaction details</li>
+          <li>Shipping and billing address</li>
+          <li>Account credentials (encrypted password)</li>
+          <li>Order history and transaction details</li>
         </ul>
 
         <h3>2.2 Automatically Collected Information</h3>
         <ul>
           <li>IP address and browser type</li>
-          <li>Device information and operating system</li>
-          <li>Pages visited, time spent, and actions taken</li>
+          <li>Device details and operating system</li>
+          <li>Pages viewed, time spent, and website interactions</li>
           <li>Cookies and tracking technologies for analytics and personalization</li>
         </ul>
       </section>
 
       <section>
         <h2>3. How We Use Your Information</h2>
-        <p>We use your information for purposes such as:</p>
+        <p>Your information is used for the following purposes:</p>
         <ul>
-          <li>Providing and improving ExpressBuy services</li>
-          <li>Responding to inquiries and customer support requests</li>
-          <li>Enhancing user experience and personalization</li>
-          <li>Sending order confirmations, updates, or notifications</li>
-          <li>Maintaining security and preventing fraud</li>
-          <li>Sending promotional emails (you may opt out anytime)</li>
-          <li>Complying with legal obligations</li>
+          <li>Processing and delivering your orders</li>
+          <li>Creating and managing your ExpressBuy account</li>
+          <li>Providing customer support and resolving issues</li>
+          <li>Sending order updates, confirmations, and notifications</li>
+          <li>Improving website performance and user experience</li>
+          <li>Preventing fraud and enhancing security</li>
+          <li>Sending promotional communications (optional; you may opt out)</li>
+          <li>Meeting legal and regulatory obligations</li>
         </ul>
       </section>
 
       <section>
         <h2>4. Payment Processing</h2>
         <p>
-          All payments are processed securely through trusted third-party gateways such as Razorpay or Paytm. 
-          We do not store your full credit/debit card details. All transactions are encrypted and compliant with PCI-DSS standards.
+          All payments are securely handled through our trusted payment gateway, <strong>Razorpay</strong>. 
+          We do not store your complete card, UPI, or bank details. Razorpay processes all transactions 
+          using industry-standard encryption and is fully compliant with PCI-DSS security requirements.
         </p>
       </section>
 
       <section>
         <h2>5. Cookies and Tracking Technologies</h2>
         <p>
-          We use cookies to remember your preferences, track activity, and improve performance. 
-          You can manage or disable cookies in your browser settings, but doing so may limit some functionalities.
+          We use cookies to maintain your shopping cart, enhance site performance, and understand user 
+          behavior. You may disable cookies via your browser settings, but some website functionality 
+          may be affected.
         </p>
       </section>
 
       <section>
         <h2>6. Data Security</h2>
         <p>
-          We employ SSL encryption, secure servers, and periodic security audits to protect your personal data. 
-          While we strive to maintain a high level of security, no system is completely secure, and we encourage users to protect their passwords.
+          We implement SSL encryption, secure servers, and regular security audits to protect your 
+          personal data. While we take strong precautions, no online platform is completely secure. 
+          We encourage you to keep your password private and secure.
         </p>
       </section>
 
       <section>
         <h2>7. Children's Privacy</h2>
         <p>
-          Our website and services are intended for users above the age of 18. 
-          We do not knowingly collect personal data directly from children under 18. 
-          If you believe your child has provided personal information, please contact us immediately to have it removed.
+          ExpressBuy is intended for individuals aged 18 and above. We do not knowingly collect data 
+          from children under 18. If you believe a minor has provided information, please contact us 
+          immediately so we can remove it.
         </p>
       </section>
 
       <section>
         <h2>8. Data Retention</h2>
         <p>
-          We retain customer information for as long as necessary to provide services, support, 
-          and comply with legal and tax requirements. You may request data deletion at any time.
+          We retain your data only as long as needed to complete orders, provide support, and comply 
+          with legal obligations. You may request account or data deletion at any time.
         </p>
       </section>
 
       <section>
         <h2>9. Your Privacy Rights</h2>
         <ul>
-          <li>Access and review your personal information</li>
-          <li>Request corrections or deletion of your account</li>
-          <li>Withdraw consent for marketing communications</li>
-          <li>Export your data in a readable format</li>
-          <li>Opt out of tracking and profiling</li>
+          <li>Access your personal information</li>
+          <li>Request corrections or updates</li>
+          <li>Request account or data deletion</li>
+          <li>Withdraw from marketing communications</li>
+          <li>Request a copy of your data</li>
+          <li>Opt out of non-essential analytics tracking</li>
         </ul>
         <p>
-          To exercise these rights, please contact us at{" "}
-          <a href="mailto:support@ExpressBuy.in">support@ExpressBuy.in</a>.
+          To exercise your privacy rights, contact us at{" "}
+          <a href="mailto:support@expressbuy.in">support@expressbuy.in</a>.
         </p>
       </section>
 
       <section>
         <h2>10. Third-Party Services</h2>
         <p>
-          We may use third-party services such as analytics, shipping partners, or social media integrations. 
-          These services operate under their own privacy policies. We encourage you to review them separately.
+          We may share limited information with service providers such as payment gateways, courier 
+          partners, and analytics tools. These services operate under their own privacy policies, 
+          and we advise reviewing them separately.
         </p>
       </section>
 
       <section>
         <h2>11. International Users</h2>
         <p>
-          ExpressBuy operates from India. By accessing our services from outside India, 
-          you consent to the transfer and processing of your data in accordance with Indian data protection laws.
+          ExpressBuy operates from India. If you access our platform from outside India, you consent 
+          to your data being processed in accordance with Indian data protection laws.
         </p>
       </section>
 
       <section>
         <h2>12. Changes to This Policy</h2>
         <p>
-          We may update this Privacy Policy periodically. Changes will be reflected on this page with an updated date. 
-          Continued use of our services after changes indicates acceptance of the updated policy.
+          We may update this Privacy Policy from time to time. Changes will be reflected on this page 
+          with an updated “Last Updated” date. Continued use of the website after revisions signifies 
+          your acceptance of the updated policy.
         </p>
       </section>
 
@@ -145,9 +151,9 @@ const PrivacyPolicy = () => {
         <h2>13. Contact Us</h2>
         <p>
           <strong>ExpressBuy</strong><br />
-          Online Services & Digital Platform<br />
+          Customer Support Team<br />
           Email:{" "}
-          <a href="mailto:support@ExpressBuy.in">support@expressbuy.in</a><br />
+          <a href="mailto:support@expressbuy.in">support@expressbuy.in</a><br />
           Website:{" "}
           <a
             href="https://expressbuy.page/"
@@ -161,8 +167,8 @@ const PrivacyPolicy = () => {
 
       <footer>
         <p>
-          By using ExpressBuy, you acknowledge that you have read, understood,
-          and agree to be bound by this Privacy Policy.
+          By using ExpressBuy, you acknowledge that you have read, understood, 
+          and agree to this Privacy Policy.
         </p>
       </footer>
     </div>
