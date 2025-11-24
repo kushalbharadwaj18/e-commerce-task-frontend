@@ -32,6 +32,7 @@ const TermsAndConditions = () => {
           across multiple categories. All our products are <strong>original</strong> and sourced from
           verified suppliers. We do not sell digital services or digital goods of any kind.
         </p>
+        <p>ExpressBuy does not sell counterfeit, fake, replica, refurbished, or illegally sourced products.</p>
       </section>
 
       {/* 3. Accounts */}
@@ -79,6 +80,7 @@ const TermsAndConditions = () => {
           We make every effort to display accurate product descriptions and images. However,
           slight variations may occur due to screen differences or manufacturer updates.
         </p>
+        <p>All products are sourced from verified suppliers, and their authenticity is guaranteed.</p>
         <p>ExpressBuy is not responsible for minor visual differences.</p>
       </section>
 
@@ -86,10 +88,10 @@ const TermsAndConditions = () => {
       <section>
         <h2>6. Shipping & Delivery</h2>
         <ul>
-          <li>We currently ship only to select states within India.</li>
-          <li>Typical delivery time is <strong>3–7 business days</strong>, depending on location.</li>
+          <li>We currently ship only in Telangana.</li>
+          <li>Typical delivery time is <strong>3-7 business days</strong>, depending on location.</li>
           <li>Orders are shipped via trusted courier partners.</li>
-          <li>Delivery delays may occur due to weather, courier issues, or operational reasons.</li>
+          <li>Delivery timelines are estimates and may vary due to courier delays, holidays, or external factors. ExpressBuy is not liable for delays outside our control.</li>
         </ul>
       </section>
 
@@ -118,6 +120,7 @@ const TermsAndConditions = () => {
           You can cancel your order <strong>before it is shipped</strong>. Once shipped, it
           can only be processed as a return.
         </p>
+        <p><strong>Note: </strong>Non-returnable items include used products, items without original packaging, and products damaged due to customer misuse.</p>
       </section>
 
       {/* 8. User Conduct */}
