@@ -21,10 +21,18 @@ import ContactUs from "./pages/ContactUs"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
 import TermsAndConditions from "./pages/TermsAndConditions"
 import RefundPolicy from "./pages/RefundPolicy"
+import SellerSignup from "./pages/SellerSignup"
+import SellerLogin from "./pages/SellerLogin"
+import SellerStatus from "./pages/SellerStatus"
+import SellerDashboard from "./pages/SellerDashboard"
 
 // Protected route wrapper for users
+// Check both localStorage token and user state
 const ProtectedRoute = ({ user, children }) => {
-  if (!user) {
+  const token = localStorage.getItem("token")
+  
+  // Allow access if either user state is set OR token exists in localStorage
+  if (!user && !token) {
     return <Navigate to="/login" replace />
   }
   return children
@@ -49,8 +57,12 @@ function App() {
       const savedUser = localStorage.getItem("user")
       const savedCart = localStorage.getItem("cart")
       const savedAdminToken = localStorage.getItem("adminToken")
+      const savedToken = localStorage.getItem("token")
 
-      if (savedUser) setUser(JSON.parse(savedUser))
+      // Only set user if both user and token exist
+      if (savedUser && savedToken) {
+        setUser(JSON.parse(savedUser))
+      }
       if (savedCart) setCart(JSON.parse(savedCart))
       if (savedAdminToken) setAdminToken(savedAdminToken)
     } catch (error) {
@@ -114,8 +126,24 @@ function App() {
               </AdminProtectedRoute>
             }
           />
-
-          {/* 👤 User Routes */}
+          {/* 🏪 Seller Routes */}
+          <Route
+            path="/seller/signup"
+            element={<SellerSignup setSeller={() => {}} />}
+          />
+          <Route
+            path="/seller/login"
+            element={<SellerLogin setSeller={() => {}} />}
+          />
+          <Route
+            path="/seller/status"
+            element={<SellerStatus />}
+          />
+          <Route
+            path="/seller/dashboard"
+            element={<SellerDashboard />}
+          />
+          {/*  User Routes */}
           <Route
             path="*"
             element={

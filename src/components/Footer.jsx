@@ -51,6 +51,23 @@ function Footer() {
             </li>
           </ul>
         </div>
+
+        <div className="footer-section">
+          <h4>Seller Program</h4>
+          <ul>
+            <li>
+              <Link to="/seller/signup" className="sell-products-link">
+                💼 Sell Your Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/seller/login">Seller Login</Link>
+            </li>
+            <li>
+              <a href="#faq">Seller FAQ</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="footer-bottom">

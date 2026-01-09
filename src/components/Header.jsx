@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
@@ -8,7 +6,9 @@ function Header({ user, onLogout, cartCount }) {
   const [showMenu, setShowMenu] = useState(false);
   const [categories, setCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
     fetchCategories();
   }, []);
@@ -53,34 +53,25 @@ function Header({ user, onLogout, cartCount }) {
         <div className="header-actions">
           {user ? (
             <div className="user-menu">
-              <span className="user-name">Hello, {user.name}</span>
+              <span className="user-name">
+                Hello, {user?.name}
+              </span>
               <button onClick={onLogout} className="logout-btn">
                 Logout
               </button>
             </div>
           ) : (
-            <Link to="/login" className="auth-link">
-              Login
-            </Link>
+            <>
+              <Link to="/login" className="auth-link">Login</Link>
+            </>
           )}
+
           <Link to="/cart" className="cart-link">
             Cart <span className="cart-count">{cartCount}</span>
           </Link>
-          {/* <Link to="/admin/login" className="admin-link">
-            Admin
-          </Link> */}
         </div>
       </div>
 
-      {/* <nav className="header-nav">
-        <Link to="/products">All Products</Link>
-        {categories.map((category) => (
-          <Link key={category._id} to={`/products?category=${category.name}`}>
-            {category.name}
-          </Link>
-        ))} 
-      </nav>
-         */}
       {user && (
         <nav className="header-nav">
           {user && <Link to="/orders">Orders</Link>}

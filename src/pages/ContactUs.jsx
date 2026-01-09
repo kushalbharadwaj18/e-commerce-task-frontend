@@ -12,17 +12,18 @@ const ContactUs = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contact",
+        `${baseUrl}/api/contact`,
         formData
       );
       console.log(res.data);
@@ -31,7 +32,7 @@ const ContactUs = () => {
       setTimeout(() => setSubmitted(false), 3000);
     } catch (err) {
       console.error("Error submitting form:", err);
-      setError(data.message || "Something went wrong. Please try again.");
+      setError(err.response?.data?.message || "Something went wrong. Please try again.");
     }
   };
 
