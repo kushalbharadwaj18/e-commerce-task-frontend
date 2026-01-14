@@ -25,6 +25,7 @@ import SellerSignup from "./pages/SellerSignup"
 import SellerLogin from "./pages/SellerLogin"
 import SellerStatus from "./pages/SellerStatus"
 import SellerDashboard from "./pages/SellerDashboard"
+import EmailVerification from "./pages/EmailVerification"
 
 // Protected route wrapper for users
 // Check both localStorage token and user state
@@ -130,6 +131,10 @@ function App() {
           <Route
             path="/seller/signup"
             element={<SellerSignup setSeller={() => {}} />}
+          />
+          <Route
+            path="/seller/verify-email"
+            element={<EmailVerification />}
           />
           <Route
             path="/seller/login"

@@ -18,24 +18,41 @@ function SellerStatus() {
   const fetchStatus = async () => {
     try {
       const token = localStorage.getItem("sellerToken");
+      console.log("Token from localStorage:", token ? `${token.substring(0, 20)}...` : "missing"); // Debug log
+      
       if (!token) {
+        console.warn("No token found, redirecting to signup");
         navigate("/seller/signup");
         return;
       }
 
+      console.log(`Fetching status from: ${baseUrl}/api/seller/status`);
       const response = await fetch(`${baseUrl}/api/seller/status`, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { 
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        },
       });
 
+      console.log("API response status:", response.status); // Debug log
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("API error response:", errorData);
+        throw new Error(`API error: ${response.status} - ${errorData.message}`);
+      }
+
       const data = await response.json();
+      console.log("Status response data:", data); // Debug log
+      console.log("Status value:", data.status);
       setStatus(data);
 
       if (data.isApproved && data.status === "approved") {
         localStorage.setItem("sellerStatus", "approved");
       }
     } catch (err) {
-      setError("Error fetching status");
-      console.error(err);
+      console.error("Fetch error:", err.message);
+      setError(err.message || "Error fetching status");
     } finally {
       setLoading(false);
     }
@@ -159,6 +176,16 @@ function SellerStatus() {
             </div>
             <button onClick={() => window.location.href = "/contactus"} className="btn">
               Contact Support
+            </button>
+          </div>
+        )}
+
+        {!status.status && (
+          <div className="status-unknown">
+            <h2>Unable to load status</h2>
+            <p>Status information not available. Please try refreshing the page.</p>
+            <button onClick={fetchStatus} className="btn btn-primary">
+              Refresh
             </button>
           </div>
         )}

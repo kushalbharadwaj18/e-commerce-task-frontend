@@ -126,11 +126,8 @@ function SellerSignup({ setSeller }) {
         localStorage.setItem("seller", JSON.stringify(data.seller));
         setSeller(data.seller);
 
-        // Show success message or redirect
-        alert(
-          "Registration successful! Please wait for admin approval to access seller features."
-        );
-        navigate("/seller/status");
+        // Redirect to email verification page
+        navigate("/seller/verify-email");
       } else {
         setError(data.message || "Registration failed");
       }
